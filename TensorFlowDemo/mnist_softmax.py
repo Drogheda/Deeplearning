@@ -48,7 +48,7 @@ for i in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
     sess.run(train_step, feed_dict = {x: batch_xs, y_: batch_ys})
 
-#evaluation model
+#evaluation model(评估模型)
 #tf.arg_max()找到张量y第二个向量的最大值，即找到每一个图片对应的最高概率
 #correct_prediction是boolean类型，将其转化成float类型
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
