@@ -4,6 +4,7 @@ import h5py
 #broadcasting:先将实数或向量扩展再对对应元素进行运算
 A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 print(A)
+print(A.shape[1])	#输出为3
 print(A + 100)			
 
 #reshape()函数,注意reshape以后不能丢失数据:1x12 12x1 2x6 6x2 3x4 4x3
@@ -148,11 +149,25 @@ print(b[0][0], len(b))		#b是一个二维数组，也可以看成是一个含有
 print(brr.T, brr.shape)		#brr是一个2x2的矩阵
 print(crr.T, crr.shape)		#crr和brr效果相同
 
+#eval()函数用来执行一个字符串表达式，并返回表达式的值
+print(eval("2 * 3 + 4"))
 
+# ndarray多维数组
+x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]	#list
+x = np.array(x)	# 将任意序列类型的对象转换成ndarray数组
+# 或直接这样定义x：x = np.arange(10)
+print(type(x))	# ndarray
 
+# sklearn中，与逻辑回归有关的主要是这三个类：LogisticRegression， LogisticRegressionCV 和logistic_regression_path。
+# 其中LogisticRegression和LogisticRegressionCV的主要区别是LogisticRegressionCV使用了交叉验证来选择正则化系数C。
+# 而LogisticRegression需要自己每次指定一个正则化系数。
 
-
-
+# 方法：
+# fit(X,y[,sample_weight])：训练模型。
+# predict(X)：用模型进行预测，返回预测值。
+# score(X,y[,sample_weight])：返回（X，y）上的预测准确率（accuracy）。
+# predict_log_proba（X）：返回一个数组，数组的元素依次是 X 预测为各个类别的概率的对数值。 
+# predict_proba（X）：返回一个数组，数组元素依次是 X 预测为各个类别的概率的概率值。
 
 
 
